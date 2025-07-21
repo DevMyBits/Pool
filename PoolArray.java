@@ -111,13 +111,13 @@ public class PoolArray<Item> implements Pool<Item>, Serializable
         return mIterator;
     }
 
-    private PoolArray()
+    public PoolArray()
     {
         mLength = 0;
         mItems = new Object[0];
     }
 
-    PoolArray(int capacity)
+    public PoolArray(int capacity)
     {
         if (capacity <= 0) throw new IllegalArgumentException("Pools: The pool length mut be bigger than 0.");
 
