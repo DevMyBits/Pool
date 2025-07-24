@@ -5,7 +5,7 @@ import java.util.Objects;
 
 /**
  * Created on : 24/04/2021
- * Author     : Yoann Meclot (Msay2)
+ * Author     : Yoann Meclot (DevMyBits)
  * Email      : yoannmeclot@hotmail.com
  */
 public class PoolArray<Item> implements Pool<Item>, Serializable
