@@ -3,7 +3,7 @@ import java.io.Serializable;
 /**
  * Created on : 24/04/2021
  * Author     : Yoann Meclot (DevMyBits)
- * Email      : yoannmeclot@hotmail.com
+ * Email      : devmybits@gmail.com
  */
 public interface Pool<Item> extends Serializable
 {
