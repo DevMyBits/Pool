@@ -15,6 +15,14 @@ public interface Pool<Item> extends Serializable
         return result;
     }
 
+    static <Item> Pool<Item> asSynchronized(Item... values)
+    {
+        Pool<Item> result = new PoolSynchronized<>();
+        for (Item value : values) result.release(value);
+
+        return result;
+    }
+
     Item acquire();
 
     Item acquireFirst();

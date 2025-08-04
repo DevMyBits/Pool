@@ -20,6 +20,18 @@ public class PoolArray<Item> implements Pool<Item>, Serializable
 
     private final InternalIterator mIterator = new InternalIterator();
 
+    public PoolArray()
+    {
+        mLength = 0;
+        mItems = new Object[0];
+    }
+
+    public PoolArray(int capacity)
+    {
+        if (capacity <= 0) throw new IllegalArgumentException("Pools: The pool length mut be bigger than 0.");
+        mItems = new Object[capacity];
+    }
+
     @Override
     public Item acquire()
     {
@@ -109,19 +121,6 @@ public class PoolArray<Item> implements Pool<Item>, Serializable
     {
         mIterator.mIndex = 0;
         return mIterator;
-    }
-
-    public PoolArray()
-    {
-        mLength = 0;
-        mItems = new Object[0];
-    }
-
-    public PoolArray(int capacity)
-    {
-        if (capacity <= 0) throw new IllegalArgumentException("Pools: The pool length mut be bigger than 0.");
-
-        mItems = new Object[capacity];
     }
 
     private final class InternalIterator implements Iterator<Item>

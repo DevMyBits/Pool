@@ -9,12 +9,16 @@ public class PoolSynchronized<Item> extends PoolArray<Item> implements Serializa
 {
     private static final long serialVersionUID = 589100828766498819L;
 
-    private final Object mMonitor;
+    private final Object mMonitor = new Object();
 
-    PoolSynchronized(int capacity, Object lock)
+    public PoolSynchronized()
+    {
+        super();
+    }
+
+    public PoolSynchronized(int capacity)
     {
         super(capacity);
-        mMonitor = lock;
     }
 
     @Override
